@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="spati, mate, berlin">
+<meta name="author" content="">
+<meta name="description" content="The Späti App">
+<title>Späti App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="site.webmanifest">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="theme-color" content="#fcf356">
+<style>
+    
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+.mate {
+  animation: rotate 2s ease-in-out infinite;
+  width: 200px;
+  height: 200px;
+}
+
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>The Späti App</h1>
+</header>
+<section id="finding">
+<h4>Finding a späti near you...</h4>
+<img src="./mate.png" class="mate" />
+</section>
+<section id="location" style="display:none">
+<h2>Look around, there is one right there.</h2>
+</section>
+</main>
+</body>
+<script>
+window.addEventListener('load', function(){
+    window.setTimeout(function(){
+        document.getElementById("location").style.display = "inherit";
+        document.getElementById("finding").style.display = "none";
+    }, 1000*4.5);
+})
+</script>
+</html>
+

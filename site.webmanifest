@@ -1,0 +1,14 @@
+{
+    "short_name": "Späti",
+    "name": "The Späti App",
+    "icons": [
+        {
+            "src": "icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "start_url": ".",
+    "background_color": "#fcf356",
+    "theme_color": "#fcf356"
+}
