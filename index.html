@@ -76,8 +76,26 @@ window.addEventListener('load', function(){
     window.setTimeout(function(){
         document.getElementById("location").style.display = "inherit";
         document.getElementById("finding").style.display = "none";
+        setrandomspati();
     }, 1000*4.5);
 })
+
+
+function setrandomspati() {
+     const spati_en = ["There's probably a Späti downstairs", "Didn't you just see one in the last street?"];
+     const spati_de = ['Sicherlich gibt es eins in der Strasse nebenan', 'Da links'];
+     var language = navigator.language || navigator.userLanguage; 
+
+    if (language == "de_DE") {
+      var random_spati = spati_de[Math.floor(Math.random()*spati_de.length)];
+    }
+    else {
+      var random_spati = spati_en[Math.floor(Math.random()*spati_en.length)];
+    }
+    console.log(random_spati)
+    document.getElementById("location").innerHTML = random_spati;
+      
+}
 </script>
 </html>
 
