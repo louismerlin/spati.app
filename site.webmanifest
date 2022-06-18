@@ -5,9 +5,10 @@
         {
             "src": "icon.png",
             "type": "image/png",
-            "sizes": "192x192"
+            "sizes": "512"
         }
     ],
+    "display": "standalone",
     "start_url": ".",
     "background_color": "#b8c6db",
     "theme_color": "#b8c6db"
