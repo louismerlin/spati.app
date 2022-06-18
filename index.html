@@ -86,7 +86,7 @@ function setrandomspati() {
      const spati_de = ["Sicherlich gibt es eins in der Strasse nebenan", "Da links", "Schau mal in der anderen Strasse", "Der nächste Späti ist geschlossen, aber in dieser Strasse lebt Hans Müller. Da kannste klingeln für ein letztes Bier"];
      var language = navigator.language || navigator.userLanguage; 
 
-    if (language == "de_DE") {
+    if (language.includes("de-DE")) {
       var random_spati = spati_de[Math.floor(Math.random()*spati_de.length)];
     }
     else {
