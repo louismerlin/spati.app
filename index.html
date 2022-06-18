@@ -97,8 +97,8 @@ var language = navigator.language || navigator.userLanguage;
 
 
 window.addEventListener('load', async function(){
-    var spati_en = await fetch('./phrases/spati_en.json').then(response => response.json());
-    var spati_de = await fetch('./phrases/spati_de.json').then(response => response.json());
+    var spati_en = await fetch('./spati_en.json').then(response => response.json());
+    var spati_de = await fetch('./spati_de.json').then(response => response.json());
 
     spati_en = spati_en.phrases
     spati_de = spati_de.phrases
