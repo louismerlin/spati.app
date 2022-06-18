@@ -92,43 +92,26 @@ footer {
 </main>
 </body>
 <script>
-const spati_en = [
-  "There's probably a Späti downstairs", 
-  "Didn't you just see one in the last street?", 
-  "You drank enough for today, just go home!", 
-  "Follow that person in front of you, they're probably also looking for one", 
-  "Just around the corner, we're just not sure which one", 
-  "The nearest Späti just closed, but there's Hans Müller living here if you want a beer, just ring", 
-  "Why are you searching for one? Wasn't it Laura's birthday this evening?",
-  "If there is not one in your street and in the next street, you're probably not in Berlin",
-  "Oh easy. Just go left then right then again left and ask somebody else.",
-  "Go back you just missed it."
-];
-const spati_de = [
-  "Sicherlich gibt es eins in der Straße nebenan", 
-  "Da links", 
-  "Schau mal in der anderen Straße", 
-  "Der nächste Späti ist geschlossen, aber in dieser Straße lebt Hans Müller. Da kannste klingeln für ein letztes Bier", 
-  "Die Person da vorne geht gerade zu einem Späti", 
-  "Warum suchst du einen Späti? War es nicht Lauras Geburtstag heute Abend?",
-  "Wenn in dieser oder in der nächsten Straße keiner ist, bist die wahrscheinlich nicht in Berlin",
-  "Naja ganz einfach. Geh die nächste rechts, dann links dann wieder rechts und dann fragst du da einfach noch mal."
-];
 
 var language = navigator.language || navigator.userLanguage; 
 
-if (language.includes("de-DE")) {
-  var random_spati = spati_de[Math.floor(Math.random()*spati_de.length)];
-  document.getElementById("finding").innerHTML = "<h4>Sucht ein Späti in deiner Nähe...</h4><img src='./mate.png' class='mate' />";
 
-}
-else {
-  var random_spati = spati_en[Math.floor(Math.random()*spati_en.length)];
-  document.getElementById("finding").innerHTML = "<h4>Finding a Späti near you...</h4><img src='./mate.png' class='mate' />";
+window.addEventListener('load', async function(){
+    var spati_en = await fetch('./phrases/spati_en.json').then(response => response.json());
+    var spati_de = await fetch('./phrases/spati_de.json').then(response => response.json());
 
-}
+    spati_en = spati_en.phrases
+    spati_de = spati_de.phrases
+    
+    if (language.includes("de-DE")) {
+      var random_spati = spati_de[Math.floor(Math.random()*spati_de.length)];
+      document.getElementById("finding").innerHTML = "<h4>Sucht ein Späti in deiner Nähe...</h4><img src='./mate.png' class='mate' />";
+    }
+    else {
+      var random_spati = spati_en[Math.floor(Math.random()*spati_en.length)];
+      document.getElementById("finding").innerHTML = "<h4>Finding a Späti near you...</h4><img src='./mate.png' class='mate' />";
+    }
 
-window.addEventListener('load', function(){
     window.setTimeout(function(){
         document.getElementById("location").style.display = "inherit";
         document.getElementById("finding").style.display = "none";
