@@ -92,14 +92,14 @@ footer {
 </main>
 </body>
 <script>
-const spati_en = ["There's probably a Späti downstairs", "Didn't you just see one in the last street?", "You drank enough for today, just go home!", "Follow that person in front of you, they're probably also looking for one", "Just around the corner", "The nearest Späti just closed, but there's Hans Müller living here if you want a beer, just ring"];
-const spati_de = ["Sicherlich gibt es eins in der Strasse nebenan", "Da links", "Schau mal in der anderen Strasse", "Der nächste Späti ist geschlossen, aber in dieser Strasse lebt Hans Müller. Da kannste klingeln für ein letztes Bier", "Die Person da vorne geht gerade zu einem Späti"];
+const spati_en = ["There's probably a Späti downstairs", "Didn't you just see one in the last street?", "You drank enough for today, just go home!", "Follow that person in front of you, they're probably also looking for one", "Just around the corner", "The nearest Späti just closed, but there's Hans Müller living here if you want a beer, just ring", "Why are you searching for one? Wasn't it Laura's birthday this evening?"];
+const spati_de = ["Sicherlich gibt es eins in der Strasse nebenan", "Da links", "Schau mal in der anderen Strasse", "Der nächste Späti ist geschlossen, aber in dieser Strasse lebt Hans Müller. Da kannste klingeln für ein letztes Bier", "Die Person da vorne geht gerade zu einem Späti", "Warum suchst du einen Späti? War es nicht Lauras Geburtstag heute abend?"];
 
 var language = navigator.language || navigator.userLanguage; 
 
 if (language.includes("de-DE")) {
   var random_spati = spati_de[Math.floor(Math.random()*spati_de.length)];
-  document.getElementById("finding").innerHTML = "<h4>Sucht ein Späti in deiner nähe...</h4><img src='./mate.png' class='mate' />";
+  document.getElementById("finding").innerHTML = "<h4>Sucht ein Späti in deiner Nähe...</h4><img src='./mate.png' class='mate' />";
 
 }
 else {
